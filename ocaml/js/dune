@@ -1,0 +1,5 @@
+(executable
+ (name vec_core)
+ (modes js)
+ (libraries vec_workbook js_of_ocaml)
+ (js_of_ocaml (flags --pretty)))

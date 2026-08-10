@@ -1,0 +1,42 @@
+:root {
+  --vec-bg: #f3f1eb;
+  --vec-bg-deep: #e7e2d6;
+  --vec-ink: #1a1f16;
+  --vec-muted: #5c6456;
+  --vec-line: #c9c2b4;
+  --vec-accent: #2f5d3a;
+  --vec-accent-soft: #d7e4d9;
+  --vec-danger: #8b2e2e;
+  --vec-panel: rgba(255, 252, 246, 0.92);
+  --vec-font: "DM Sans", "Segoe UI", sans-serif;
+  --vec-mono: "IBM Plex Mono", "Consolas", monospace;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+  font-family: var(--vec-font);
+  color: var(--vec-ink);
+  background:
+    radial-gradient(1200px 600px at 10% -10%, #dfe8df 0%, transparent 55%),
+    radial-gradient(900px 500px at 100% 0%, #e8dfd0 0%, transparent 50%),
+    var(--vec-bg);
+}
+
+body {
+  min-height: 100%;
+}
+
+#univer-root,
+.univer-app-layout,
+.univer-workbench-layout {
+  height: 100%;
+}
