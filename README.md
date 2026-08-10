@@ -2,7 +2,7 @@
 
 Local-first desktop spreadsheet from Menhir Holdings.
 
-**Path:** `Menhir Holdings/Utilities/Vec`  
+**Path:** `Menhir Holdings/Employment/Vec`  
 **Linear:** [Vec](https://linear.app/menhir-holdings/project/vec-9ff447b5bd6f) · [MT-167](https://linear.app/menhir-holdings/issue/MT-167/vec-v1-windows-desktop-spreadsheet-installer)
 
 ## Stack

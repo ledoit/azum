@@ -2,6 +2,8 @@
 
 Linear SoT: [MT-167](https://linear.app/menhir-holdings/issue/MT-167/vec-v1-windows-desktop-spreadsheet-installer) · Project [Vec](https://linear.app/menhir-holdings/project/vec-9ff447b5bd6f)
 
+**Path:** `Menhir Holdings/Employment/Vec` (moved from Utilities)
+
 ## Shipped / in flight
 
 | Item | State | Issue |
