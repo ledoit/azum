@@ -9,7 +9,7 @@ Linear SoT: [MT-167](https://linear.app/menhir-holdings/issue/MT-167/vec-v1-wind
 | Item | State | Issue |
 |------|-------|-------|
 | App scaffold (SvelteKit + Tauri 2) | In review (this PR) | MT-167 |
-| Univer sheet grid + toolbar chrome | In review | MT-167 |
+| Custom light grid (Univer removed) | In review | MT-167 |
 | Native File menu + toolbar New/Open/Save | In review | MT-167 |
 | `.vec` / `.csv` / `.xlsx` IO | In review | MT-167 |
 | OCaml engine seam + TS fallback | In review | MT-167 |
@@ -22,3 +22,4 @@ Linear SoT: [MT-167](https://linear.app/menhir-holdings/issue/MT-167/vec-v1-wind
 |------|-------|
 | Compiled OCaml `vec_core.js` in CI | backlog |
 | Signed / notarized Mac build | when Phil says ship Mac |
+| Zig crunch path (optional) | backlog — not needed for grid UI |

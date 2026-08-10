@@ -2,7 +2,7 @@
   import { onMount } from "svelte";
   import { listen } from "@tauri-apps/api/event";
   import { getCurrentWindow } from "@tauri-apps/api/window";
-  import { initEngine, getEngine } from "../engine";
+  import { initEngine, getEngine, type WorkbookData } from "../engine";
   import {
     basename,
     extensionOf,
@@ -10,24 +10,25 @@
     pickSavePath,
   } from "../lib/platform/files";
   import { loadPath, savePath } from "../lib/spreadsheet/io";
-  import { mountUniver, type UniverHandle } from "../lib/spreadsheet/univerHost";
+  import SheetGrid from "../lib/spreadsheet/SheetGrid.svelte";
 
-  let hostEl: HTMLDivElement | undefined = $state();
-  let handle: UniverHandle | null = null;
+  type GridApi = {
+    getBook: () => WorkbookData;
+    loadBook: (next: WorkbookData) => void;
+  };
+
+  let book = $state<WorkbookData>(getEngine().createEmpty("Workbook"));
+  let grid: GridApi | undefined = $state();
   let filePath = $state<string | null>(null);
   let dirty = $state(false);
   let status = $state("Ready");
-  let selection = $state("");
-  let sheetName = $state("Sheet1");
+  let selection = $state("A1");
   let engineLabel = $state("ts-fallback");
   let title = $derived(
     `${dirty ? "• " : ""}${filePath ? basename(filePath) : "Untitled"} — Vec`,
   );
 
-  async function refreshChrome() {
-    if (!handle) return;
-    selection = handle.selectionLabel();
-    sheetName = handle.activeSheetName();
+  async function setTitle() {
     try {
       await getCurrentWindow().setTitle(title);
     } catch {
@@ -35,35 +36,38 @@
     }
   }
 
-  function markDirty() {
+  $effect(() => {
+    void title;
+    void setTitle();
+  });
+
+  function markDirty(next: WorkbookData) {
+    book = next;
     dirty = true;
     status = "Unsaved changes";
-    void refreshChrome();
   }
 
   async function newWorkbook() {
-    if (!handle) return;
-    handle.loadWorkbookData(getEngine().createEmpty("Workbook"));
+    book = getEngine().createEmpty("Workbook");
+    grid?.loadBook(book);
     filePath = null;
     dirty = false;
     status = "New workbook";
-    await refreshChrome();
+    selection = "A1";
   }
 
   async function openWorkbook() {
-    if (!handle) return;
     const path = await pickOpenPath();
     if (!path) return;
     const data = await loadPath(path);
-    handle.loadWorkbookData(data);
+    book = data;
+    grid?.loadBook(data);
     filePath = path;
     dirty = false;
     status = `Opened ${basename(path)}`;
-    await refreshChrome();
   }
 
   async function saveWorkbook(saveAs = false) {
-    if (!handle) return;
     let path = filePath;
     if (saveAs || !path) {
       const ext =
@@ -75,25 +79,20 @@
       path = await pickSavePath(path ?? undefined, ext);
       if (!path) return;
     }
-    const data = handle.getWorkbookData();
+    const data = grid?.getBook() ?? book;
     await savePath(path, data);
+    book = data;
     filePath = path;
     dirty = false;
     status = `Saved ${basename(path)}`;
-    await refreshChrome();
   }
 
   onMount(() => {
     let unlisten: (() => void) | undefined;
-    let timer: ReturnType<typeof setInterval> | undefined;
 
     (async () => {
       const engine = await initEngine();
       engineLabel = engine.backend();
-      if (!hostEl) return;
-      handle = mountUniver(hostEl);
-      handle.onDirty(markDirty);
-      await refreshChrome();
 
       unlisten = await listen<string>("vec://menu", async (event) => {
         try {
@@ -115,17 +114,11 @@
           status = err instanceof Error ? err.message : String(err);
         }
       });
-
-      timer = setInterval(() => void refreshChrome(), 800);
     })().catch((err) => {
       status = err instanceof Error ? err.message : String(err);
     });
 
-    return () => {
-      unlisten?.();
-      if (timer) clearInterval(timer);
-      handle?.dispose();
-    };
+    return () => unlisten?.();
   });
 </script>
 
@@ -146,10 +139,17 @@
     </div>
   </header>
 
-  <div class="grid" bind:this={hostEl}></div>
+  <div class="grid">
+    <SheetGrid
+      bind:this={grid}
+      bind:book
+      onchange={markDirty}
+      onselection={(label) => (selection = label)}
+    />
+  </div>
 
   <footer class="status">
-    <span>{sheetName}</span>
+    <span>{book.sheets[book.activeSheet]?.name ?? "Sheet1"}</span>
     <span class="sep">/</span>
     <span class="mono">{selection || "—"}</span>
     <span class="grow"></span>
@@ -249,8 +249,6 @@
   .grid {
     min-height: 0;
     height: 100%;
-    background: #fff;
-    border-bottom: 1px solid var(--vec-line);
   }
 
   .status {
@@ -273,7 +271,6 @@
 
   .mono {
     font-family: var(--vec-mono);
-    color: var(--vec-ink);
   }
 
   .muted {

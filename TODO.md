@@ -14,3 +14,4 @@ Linear SoT: [MT-167](https://linear.app/menhir-holdings/issue/MT-167/vec-v1-wind
 - [ ] Richer OCaml formula parity with TS evaluator
 - [ ] Mac DMG CI job (on request)
 - [ ] Recent files list
+- [ ] Larger sheet / virtualized rows if needed

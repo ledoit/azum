@@ -9,7 +9,7 @@ Local-first desktop spreadsheet from Menhir Holdings.
 
 | Layer | Tech |
 |-------|------|
-| UI | SvelteKit (static) + Univer Sheets |
+| UI | SvelteKit (static) + **custom light grid** (no Univer) |
 | Shell | Tauri 2 (thin Rust: window, menus, dialog, fs) |
 | Domain seam | OCaml workbook/formula core (`ocaml/`) with TS fallback adapter |
 | Ship | Windows NSIS now; macOS DMG configured for later |
