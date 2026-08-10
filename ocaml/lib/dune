@@ -1,0 +1,4 @@
+(library
+ (name vec_workbook)
+ (public_name vec_core)
+ (libraries str))
