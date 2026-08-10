@@ -25,16 +25,16 @@ Requires Rust + platform WebView2 (Windows).
 
 ## Windows installer
 
-Because this repo lives under a path with spaces (`Menhir Holdings`), set a space-free Cargo target dir locally:
+Prefer the **CI artifact** (`vec-windows-nsis` on the PR). Local MinGW (`windows-gnu`) builds can produce an installer that fails at runtime with missing DLLs; GitHub `windows-latest` uses MSVC.
+
+If you build locally under a path with spaces (`Menhir Holdings`), also set a space-free Cargo target dir:
 
 ```bash
 export CARGO_TARGET_DIR="$HOME/Philippe/work/_build/vec-target"
 npm run tauri:build
 ```
 
-Installer: `_build/vec-target/release/bundle/nsis/Vec_*_x64-setup.exe`
-
-CI builds the NSIS artifact on PRs (see `.github/workflows/build-windows.yml`) without that workaround.
+(That `_build` folder is only a compile cache — safe to delete after you’re done.)
 
 ## Ship Mac (later)
 
