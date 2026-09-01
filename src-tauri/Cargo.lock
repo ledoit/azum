@@ -4183,7 +4183,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "vec"
+name = "azum"
 version = "0.1.0"
 dependencies = [
  "serde",
