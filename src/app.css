@@ -1,15 +1,15 @@
 :root {
-  --vec-bg: #f3f1eb;
-  --vec-bg-deep: #e7e2d6;
-  --vec-ink: #1a1f16;
-  --vec-muted: #5c6456;
-  --vec-line: #c9c2b4;
-  --vec-accent: #2f5d3a;
-  --vec-accent-soft: #d7e4d9;
-  --vec-danger: #8b2e2e;
-  --vec-panel: rgba(255, 252, 246, 0.92);
-  --vec-font: "DM Sans", "Segoe UI", sans-serif;
-  --vec-mono: "IBM Plex Mono", "Consolas", monospace;
+  --azum-bg: #f3f1eb;
+  --azum-bg-deep: #e7e2d6;
+  --azum-ink: #1a1f16;
+  --azum-muted: #5c6456;
+  --azum-line: #c9c2b4;
+  --azum-accent: #2f5d3a;
+  --azum-accent-soft: #d7e4d9;
+  --azum-danger: #8b2e2e;
+  --azum-panel: rgba(255, 252, 246, 0.92);
+  --azum-font: "DM Sans", "Segoe UI", sans-serif;
+  --azum-mono: "IBM Plex Mono", "Consolas", monospace;
 }
 
 *,
@@ -23,12 +23,12 @@ body {
   margin: 0;
   height: 100%;
   overflow: hidden;
-  font-family: var(--vec-font);
-  color: var(--vec-ink);
+  font-family: var(--azum-font);
+  color: var(--azum-ink);
   background:
     radial-gradient(1200px 600px at 10% -10%, #dfe8df 0%, transparent 55%),
     radial-gradient(900px 500px at 100% 0%, #e8dfd0 0%, transparent 50%),
-    var(--vec-bg);
+    var(--azum-bg);
 }
 
 body {

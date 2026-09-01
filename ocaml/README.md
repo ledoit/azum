@@ -1,7 +1,7 @@
-# Vec OCaml workbook core
+# Azum OCaml workbook core
 
 Domain engine for workbook/CSV/formula evaluation. The TypeScript adapter in
-`src/engine/` loads `static/engine/vec_core.js` when present; otherwise it uses
+`src/engine/` loads `static/engine/azum_core.js` when present; otherwise it uses
 the TS fallback that mirrors this API.
 
 ## Build (when opam + js_of_ocaml are installed)
@@ -9,7 +9,7 @@ the TS fallback that mirrors this API.
 ```bash
 opam install dune js_of_ocaml js_of_ocaml-ppx yojson
 dune build
-cp _build/default/js/vec_core.bc.js ../static/engine/vec_core.js
+cp _build/default/js/azum_core.bc.js ../static/engine/azum_core.js
 ```
 
 Or from the app root: `npm run engine:ocaml`.

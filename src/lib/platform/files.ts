@@ -3,7 +3,7 @@ import { readTextFile, writeTextFile } from "@tauri-apps/plugin-fs";
 import type { WorkbookData } from "../../engine";
 
 export const FILTERS = [
-  { name: "Vec Workbook", extensions: ["vec"] },
+  { name: "Azum Workbook", extensions: ["azum"] },
   { name: "Excel", extensions: ["xlsx"] },
   { name: "CSV", extensions: ["csv"] },
 ] as const;
@@ -19,7 +19,7 @@ export async function pickOpenPath(): Promise<string | null> {
 
 export async function pickSavePath(
   defaultPath?: string,
-  extension: "vec" | "xlsx" | "csv" = "vec",
+  extension: "azum" | "xlsx" | "csv" = "azum",
 ): Promise<string | null> {
   return save({
     defaultPath,
@@ -40,15 +40,15 @@ export function extensionOf(path: string): string {
   return i >= 0 ? path.slice(i + 1).toLowerCase() : "";
 }
 
-export function parseVecFile(text: string): WorkbookData {
+export function parseAzumFile(text: string): WorkbookData {
   const data = JSON.parse(text) as WorkbookData;
   if (data.version !== 1 || !Array.isArray(data.sheets)) {
-    throw new Error("Unsupported .vec file");
+    throw new Error("Unsupported .azum file");
   }
   return data;
 }
 
-export function serializeVecFile(book: WorkbookData): string {
+export function serializeAzumFile(book: WorkbookData): string {
   return JSON.stringify(book, null, 2);
 }
 

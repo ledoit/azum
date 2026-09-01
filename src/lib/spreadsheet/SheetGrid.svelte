@@ -285,14 +285,14 @@
     align-items: center;
     gap: 0.5rem;
     padding: 0.35rem 0.6rem;
-    border-bottom: 1px solid var(--vec-line);
+    border-bottom: 1px solid var(--azum-line);
     background: #faf8f3;
   }
 
   .name {
     min-width: 2.5rem;
     font-weight: 600;
-    color: var(--vec-muted);
+    color: var(--azum-muted);
   }
 
   .bar {
@@ -300,15 +300,15 @@
     font: inherit;
     font-size: 0.9rem;
     padding: 0.35rem 0.5rem;
-    border: 1px solid var(--vec-line);
+    border: 1px solid var(--azum-line);
     border-radius: 0.25rem;
     background: #fff;
-    color: var(--vec-ink);
+    color: var(--azum-ink);
   }
 
   .bar:focus {
-    outline: 2px solid var(--vec-accent-soft);
-    border-color: var(--vec-accent);
+    outline: 2px solid var(--azum-accent-soft);
+    border-color: var(--azum-accent);
   }
 
   .scroll {
@@ -336,7 +336,7 @@
   thead th,
   tbody th {
     background: #f0ebe1;
-    color: var(--vec-muted);
+    color: var(--azum-muted);
     font-weight: 600;
     text-align: center;
     position: sticky;
@@ -362,8 +362,8 @@
   }
 
   th.active {
-    background: var(--vec-accent-soft);
-    color: var(--vec-ink);
+    background: var(--azum-accent-soft);
+    color: var(--azum-ink);
   }
 
   td {
@@ -372,7 +372,7 @@
   }
 
   td.selected {
-    outline: 2px solid var(--vec-accent);
+    outline: 2px solid var(--azum-accent);
     outline-offset: -2px;
     background: #f3faf4;
   }
@@ -390,19 +390,19 @@
     font: inherit;
     font-size: 0.8rem;
     background: transparent;
-    color: var(--vec-ink);
+    color: var(--azum-ink);
     outline: none;
   }
 
   .mono {
-    font-family: var(--vec-mono);
+    font-family: var(--azum-mono);
   }
 
   .tabs {
     display: flex;
     gap: 0.15rem;
     padding: 0.25rem 0.4rem;
-    border-top: 1px solid var(--vec-line);
+    border-top: 1px solid var(--azum-line);
     background: #f0ebe1;
     overflow-x: auto;
   }
@@ -415,17 +415,17 @@
     border: 1px solid transparent;
     border-radius: 0.25rem 0.25rem 0 0;
     background: transparent;
-    color: var(--vec-muted);
+    color: var(--azum-muted);
     cursor: pointer;
   }
 
   .tabs button.active {
     background: #fff;
-    border-color: var(--vec-line);
-    color: var(--vec-ink);
+    border-color: var(--azum-line);
+    color: var(--azum-ink);
   }
 
   .tabs .add {
-    color: var(--vec-accent);
+    color: var(--azum-accent);
   }
 </style>

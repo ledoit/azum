@@ -1,12 +1,12 @@
-# Vec — TODO
+# Azum — TODO
 
-Linear SoT: [MT-167](https://linear.app/menhir-holdings/issue/MT-167/vec-v1-windows-desktop-spreadsheet-installer)
+Linear SoT: [MT-184](https://linear.app/menhir-holdings/issue/MT-184/rename-vec-azum-everywhere)
 
-## Open (MT-167)
+## Open (MT-184)
 
-- [ ] Land v1 Windows installer on PR
-- [ ] Smoke: open app, edit cell, save `.vec`, reopen
-- [ ] Smoke: CSV + XLSX round-trip
+- [ ] Land rename on `main`
+- [ ] CI `azum-windows-nsis` artifact
+- [ ] Reinstall as Azum; remove old Vec install if present
 
 ## Backlog
 

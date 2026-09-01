@@ -1,4 +1,4 @@
 (library
- (name vec_workbook)
- (public_name vec_core)
+ (name azum_workbook)
+ (public_name azum_core)
  (libraries str))
