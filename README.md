@@ -2,7 +2,7 @@
 
 Local-first desktop spreadsheet from Menhir Holdings.
 
-**Path:** `Menhir Holdings/Employment/Azum`  
+**Path:** `Menhir Holdings/Eng/Azum`  
 **Linear:** [Azum](https://linear.app/menhir-holdings/project/vec-9ff447b5bd6f) · [MT-184](https://linear.app/menhir-holdings/issue/MT-184/rename-vec-azum-everywhere)
 
 ## Stack
