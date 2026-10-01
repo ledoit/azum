@@ -1,8 +1,8 @@
 # Azum
 
-Local-first desktop spreadsheet from Menhir Holdings.
+**Shelved.** Local-first desktop spreadsheet, kept for a later Zig / OCaml / Lean / Prolog engine. Not hosted.
 
-**Path:** `Menhir Holdings/Eng/Azum`  
+**Path:** `personal/Stonehenge/Eng/Azum`  
 **Linear:** [Azum](https://linear.app/menhir-holdings/project/vec-9ff447b5bd6f) · [MT-184](https://linear.app/menhir-holdings/issue/MT-184/rename-vec-azum-everywhere)
 
 ## Stack
