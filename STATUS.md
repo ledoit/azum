@@ -2,10 +2,10 @@
 
 **Shelved.** The spreadsheet shell stays on disk for a later workbook engine in Zig, OCaml, Lean, or Prolog. No host, no public site, not a current product.
 
-Linear SoT: [MT-184](https://linear.app/menhir-holdings/issue/MT-184/rename-vec-azum-everywhere) · Project [Azum](https://linear.app/menhir-holdings/project/vec-9ff447b5bd6f)
+Linear SoT: MT-184 · Project Azum
 
 **Path:** `personal/Stonehenge/Eng/Azum`  
-**Repo:** https://github.com/menhir-holdings/azum · `main`
+**Repo:** https://github.com/ledoit/azum · `main`
 
 ## Shipped
 

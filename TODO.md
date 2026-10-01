@@ -1,6 +1,6 @@
 # Azum — TODO
 
-Linear SoT: [MT-184](https://linear.app/menhir-holdings/issue/MT-184/rename-vec-azum-everywhere)
+Linear SoT: MT-184
 
 ## Open (MT-184)
 

@@ -1,7 +1,7 @@
 {
   "name": "azum",
   "version": "0.1.0",
-  "description": "Azum — local-first desktop spreadsheet by Menhir Holdings",
+  "description": "Azum — local-first desktop spreadsheet by Philippe Ledoit",
   "type": "module",
   "scripts": {
     "dev": "vite dev",

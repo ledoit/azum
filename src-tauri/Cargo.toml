@@ -1,8 +1,8 @@
 [package]
 name = "azum"
 version = "0.1.0"
-description = "Azum — Menhir Holdings desktop spreadsheet"
-authors = ["Menhir Holdings"]
+description = "Azum — Philippe Ledoit desktop spreadsheet"
+authors = ["Philippe Ledoit"]
 edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
