@@ -25,7 +25,7 @@
   let selection = $state("A1");
   let engineLabel = $state("ts-fallback");
   let title = $derived(
-    `${dirty ? "• " : ""}${filePath ? basename(filePath) : "Untitled"} — Vec`,
+    `${dirty ? "• " : ""}${filePath ? basename(filePath) : "Untitled"} — Azum`,
   );
 
   async function setTitle() {
@@ -75,7 +75,7 @@
           ? "csv"
           : path && extensionOf(path) === "xlsx"
             ? "xlsx"
-            : "vec";
+            : "azum";
       path = await pickSavePath(path ?? undefined, ext);
       if (!path) return;
     }
@@ -94,7 +94,7 @@
       const engine = await initEngine();
       engineLabel = engine.backend();
 
-      unlisten = await listen<string>("vec://menu", async (event) => {
+      unlisten = await listen<string>("azum://menu", async (event) => {
         try {
           switch (event.payload) {
             case "file_new":
@@ -127,7 +127,7 @@
     <div class="brand">
       <span class="mark" aria-hidden="true"></span>
       <div>
-        <h1>Vec</h1>
+        <h1>Azum</h1>
         <p>Local spreadsheet</p>
       </div>
     </div>
@@ -172,8 +172,8 @@
     justify-content: space-between;
     gap: 1rem;
     padding: 0.65rem 1rem;
-    border-bottom: 1px solid var(--vec-line);
-    background: var(--vec-panel);
+    border-bottom: 1px solid var(--azum-line);
+    background: var(--azum-panel);
     backdrop-filter: blur(8px);
   }
 
@@ -188,7 +188,7 @@
     height: 2rem;
     border-radius: 0.35rem;
     background:
-      linear-gradient(145deg, var(--vec-accent), #1d3a24 70%),
+      linear-gradient(145deg, var(--azum-accent), #1d3a24 70%),
       repeating-linear-gradient(
         90deg,
         transparent,
@@ -210,7 +210,7 @@
   .brand p {
     margin: 0.1rem 0 0;
     font-size: 0.75rem;
-    color: var(--vec-muted);
+    color: var(--azum-muted);
   }
 
   .actions {
@@ -225,20 +225,20 @@
     font-weight: 600;
     padding: 0.4rem 0.75rem;
     border-radius: 0.35rem;
-    border: 1px solid var(--vec-line);
+    border: 1px solid var(--azum-line);
     background: #fffdf8;
-    color: var(--vec-ink);
+    color: var(--azum-ink);
     cursor: pointer;
   }
 
   button:hover {
-    border-color: var(--vec-accent);
-    background: var(--vec-accent-soft);
+    border-color: var(--azum-accent);
+    background: var(--azum-accent-soft);
   }
 
   button.primary {
-    background: var(--vec-accent);
-    border-color: var(--vec-accent);
+    background: var(--azum-accent);
+    border-color: var(--azum-accent);
     color: #f7fff8;
   }
 
@@ -257,8 +257,8 @@
     gap: 0.5rem;
     padding: 0.35rem 0.85rem;
     font-size: 0.78rem;
-    color: var(--vec-muted);
-    background: var(--vec-bg-deep);
+    color: var(--azum-muted);
+    background: var(--azum-bg-deep);
   }
 
   .grow {
@@ -270,7 +270,7 @@
   }
 
   .mono {
-    font-family: var(--vec-mono);
+    font-family: var(--azum-mono);
   }
 
   .muted {
@@ -278,12 +278,12 @@
   }
 
   .pill {
-    font-family: var(--vec-mono);
+    font-family: var(--azum-mono);
     font-size: 0.7rem;
     padding: 0.15rem 0.45rem;
     border-radius: 999px;
-    border: 1px solid var(--vec-line);
+    border: 1px solid var(--azum-line);
     background: #fffdf8;
-    color: var(--vec-ink);
+    color: var(--azum-ink);
   }
 </style>

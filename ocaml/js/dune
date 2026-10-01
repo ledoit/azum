@@ -1,5 +1,5 @@
 (executable
- (name vec_core)
+ (name azum_core)
  (modes js)
- (libraries vec_workbook js_of_ocaml)
+ (libraries azum_workbook js_of_ocaml)
  (js_of_ocaml (flags --pretty)))

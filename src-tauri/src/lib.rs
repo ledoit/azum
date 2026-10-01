@@ -23,7 +23,7 @@ pub fn run() {
             let file_save_as = MenuItemBuilder::with_id("file_save_as", "Save As…")
                 .accelerator("CmdOrCtrl+Shift+S")
                 .build(app)?;
-            let file_quit = PredefinedMenuItem::quit(app, Some("Quit Vec"))?;
+            let file_quit = PredefinedMenuItem::quit(app, Some("Quit Azum"))?;
 
             let file_menu = SubmenuBuilder::new(app, "File")
                 .item(&file_new)
@@ -65,18 +65,18 @@ pub fn run() {
                 let id = event.id().as_ref();
                 match id {
                     "file_new" | "file_open" | "file_save" | "file_save_as" => {
-                        let _ = handle.emit("vec://menu", id);
+                        let _ = handle.emit("azum://menu", id);
                     }
                     _ => {}
                 }
             });
 
             if let Some(window) = app.get_webview_window("main") {
-                let _ = window.set_title("Vec");
+                let _ = window.set_title("Azum");
             }
 
             Ok(())
         })
         .run(tauri::generate_context!())
-        .expect("error while running Vec");
+        .expect("error while running Azum");
 }

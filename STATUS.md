@@ -1,9 +1,11 @@
-# Vec — STATUS
+# Azum — STATUS
 
-Linear SoT: [MT-167](https://linear.app/menhir-holdings/issue/MT-167/vec-v1-windows-desktop-spreadsheet-installer) · Project [Vec](https://linear.app/menhir-holdings/project/vec-9ff447b5bd6f)
+**Shelved.** The spreadsheet shell stays on disk for a later workbook engine in Zig, OCaml, Lean, or Prolog. No host, no public site, not a current product.
 
-**Path:** `Menhir Holdings/Employment/Vec`  
-**Repo:** https://github.com/menhir-holdings/vec · `main`
+Linear SoT: MT-184 · Project Azum
+
+**Path:** `personal/Stonehenge/Eng/Azum`  
+**Repo:** https://github.com/ledoit/azum · `main`
 
 ## Shipped
 
@@ -12,16 +14,15 @@ Linear SoT: [MT-167](https://linear.app/menhir-holdings/issue/MT-167/vec-v1-wind
 | SvelteKit + Tauri 2 shell, NSIS Windows installer | MT-167 |
 | Custom light grid (Univer removed) | MT-167 |
 | Native File menu + New/Open/Save | MT-167 |
-| `.vec` / `.csv` / `.xlsx` IO | MT-167 |
+| `.azum` / `.csv` / `.xlsx` IO | MT-167 / MT-184 |
 | OCaml engine seam + TS fallback | MT-167 |
-| macOS DMG config (build deferred) | MT-167 |
-
-Merged: https://github.com/menhir-holdings/vec/pull/1 → `main` (`1519566`)
+| Rename Vec → Azum everywhere | MT-184 (this PR) |
 
 ## Open / backlog
 
 | Item | Notes |
 |------|-------|
-| Compiled OCaml `vec_core.js` in CI | backlog |
+| Compiled OCaml `azum_core.js` in CI | backlog |
 | Signed / notarized Mac build | when Phil says ship Mac |
 | Virtualized large sheets | if needed |
+| Uninstall leftover `%LOCALAPPDATA%\Vec` | after Azum install |

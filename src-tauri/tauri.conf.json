@@ -1,8 +1,8 @@
 {
   "$schema": "https://schema.tauri.app/config/2",
-  "productName": "Vec",
+  "productName": "Azum",
   "version": "0.1.0",
-  "identifier": "com.menhirholdings.vec",
+  "identifier": "com.ledoit.azum",
   "build": {
     "beforeDevCommand": "npm run dev",
     "devUrl": "http://localhost:1420",
@@ -12,7 +12,7 @@
   "app": {
     "windows": [
       {
-        "title": "Vec",
+        "title": "Azum",
         "width": 1280,
         "height": 800,
         "minWidth": 800,
@@ -27,10 +27,10 @@
   "bundle": {
     "active": true,
     "targets": ["nsis", "dmg"],
-    "publisher": "Menhir Holdings",
+    "publisher": "Philippe Ledoit",
     "category": "Productivity",
     "shortDescription": "Desktop spreadsheet",
-    "longDescription": "Vec is a local-first desktop spreadsheet from Menhir Holdings.",
+    "longDescription": "Azum is a local-first desktop spreadsheet from Philippe Ledoit.",
     "icon": [
       "icons/32x32.png",
       "icons/128x128.png",

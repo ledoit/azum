@@ -1,7 +1,7 @@
 {
-  "name": "vec",
+  "name": "azum",
   "version": "0.1.0",
-  "description": "Vec — local-first desktop spreadsheet by Menhir Holdings",
+  "description": "Azum — local-first desktop spreadsheet by Philippe Ledoit",
   "type": "module",
   "scripts": {
     "dev": "vite dev",
@@ -12,7 +12,7 @@
     "tauri": "tauri",
     "tauri:dev": "tauri dev",
     "tauri:build": "tauri build",
-    "engine:ocaml": "cd ocaml && dune build && mkdir -p ../static/engine && cp _build/default/js/vec_core.bc.js ../static/engine/vec_core.js"
+    "engine:ocaml": "cd ocaml && dune build && mkdir -p ../static/engine && cp _build/default/js/azum_core.bc.js ../static/engine/azum_core.js"
   },
   "license": "UNLICENSED",
   "private": true,

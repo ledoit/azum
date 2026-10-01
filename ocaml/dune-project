@@ -1,5 +1,5 @@
 (lang dune 3.0)
-(name vec_core)
+(name azum_core)
 (package
- (name vec_core)
- (synopsis "Vec workbook and formula core"))
+ (name azum_core)
+ (synopsis "Azum workbook and formula core"))

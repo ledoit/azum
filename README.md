@@ -1,9 +1,9 @@
-# Vec
+# Azum
 
-Local-first desktop spreadsheet from Menhir Holdings.
+**Shelved.** Local-first desktop spreadsheet, kept for a later Zig / OCaml / Lean / Prolog engine. Not hosted.
 
-**Path:** `Menhir Holdings/Employment/Vec`  
-**Linear:** [Vec](https://linear.app/menhir-holdings/project/vec-9ff447b5bd6f) · [MT-167](https://linear.app/menhir-holdings/issue/MT-167/vec-v1-windows-desktop-spreadsheet-installer)
+**Path:** `personal/Stonehenge/Eng/Azum`  
+**Linear:** Azum · MT-184
 
 ## Stack
 
@@ -25,12 +25,12 @@ Requires Rust + platform WebView2 (Windows).
 
 ## Windows installer
 
-Prefer the **CI artifact** (`vec-windows-nsis` on the PR). Local MinGW (`windows-gnu`) builds can produce an installer that fails at runtime with missing DLLs; GitHub `windows-latest` uses MSVC.
+Prefer the **CI artifact** (`azum-windows-nsis` on the PR). Local MinGW (`windows-gnu`) builds can produce an installer that fails at runtime with missing DLLs; GitHub `windows-latest` uses MSVC.
 
-If you build locally under a path with spaces (`Menhir Holdings`), also set a space-free Cargo target dir:
+If you build locally under a path with spaces (`Philippe Ledoit`), also set a space-free Cargo target dir:
 
 ```bash
-export CARGO_TARGET_DIR="$HOME/Philippe/work/_build/vec-target"
+export CARGO_TARGET_DIR="$HOME/Philippe/work/_build/azum-target"
 npm run tauri:build
 ```
 
@@ -48,9 +48,9 @@ No app rewrite required.
 
 ## OCaml engine
 
-See [`ocaml/README.md`](ocaml/README.md). Until `npm run engine:ocaml` produces `static/engine/vec_core.js`, the app uses the TS fallback that implements the same API (`src/engine/`).
+See [`ocaml/README.md`](ocaml/README.md). Until `npm run engine:ocaml` produces `static/engine/azum_core.js`, the app uses the TS fallback that implements the same API (`src/engine/`).
 
 ## File formats
 
-- `.vec` — native JSON workbook
+- `.azum` — native JSON workbook
 - `.csv` / `.xlsx` — import/export via the engine + SheetJS

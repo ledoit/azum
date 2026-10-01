@@ -3,9 +3,9 @@ import type { WorkbookData } from "../../engine";
 import { getEngine } from "../../engine";
 import {
   extensionOf,
-  parseVecFile,
+  parseAzumFile,
   readText,
-  serializeVecFile,
+  serializeAzumFile,
   writeText,
 } from "../platform/files";
 
@@ -84,8 +84,8 @@ export function workbookToXlsxArrayBuffer(book: WorkbookData): Uint8Array {
 
 export async function loadPath(path: string): Promise<WorkbookData> {
   const ext = extensionOf(path);
-  if (ext === "vec") {
-    return parseVecFile(await readText(path));
+  if (ext === "azum") {
+    return parseAzumFile(await readText(path));
   }
   if (ext === "csv") {
     return getEngine().fromCsv(await readText(path));
@@ -100,9 +100,9 @@ export async function loadPath(path: string): Promise<WorkbookData> {
 
 export async function savePath(path: string, book: WorkbookData): Promise<void> {
   const ext = extensionOf(path);
-  if (ext === "vec" || ext === "") {
-    const target = ext ? path : `${path}.vec`;
-    await writeText(target, serializeVecFile(book));
+  if (ext === "azum" || ext === "") {
+    const target = ext ? path : `${path}.azum`;
+    await writeText(target, serializeAzumFile(book));
     return;
   }
   if (ext === "csv") {
